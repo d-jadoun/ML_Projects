@@ -1,37 +1,28 @@
-# Smoking Cessation Prediction Model
-Smoking has been proven to negatively affect health in a multitude of ways, and it has been found to harm nearly every organ of the body, causing many diseases and reducing the life expectancy of smokers. As of 2018, smoking has been considered the leading cause of preventable morbidity and mortality in the world, continuing to plague the world’s overall health. According to a World Health Organization report, the number of deaths caused by smoking will reach 10 million by 2030.
+# Food Mart Media Campaign Cost Prediction
 
-Despite the availability of evidence-based treatment for smoking cessation, only less than one third of the participants could achieve the goal of abstinence. Many physicians found counseling for smoking cessation ineffective and time-consuming and did not routinely do so in daily practice. To overcome this problem, several factors had been proposed to identify smokers who had a better chance of quitting. These factors include the level of nicotine dependence, exhaled carbon monoxide (CO) concentration, cigarette amount per day, the age at smoking initiation, previous quit attempts, marital status, emotional distress, temperament and impulsivity scores, and the motivation to stop smoking.
+Convenient Food Mart (CFM) is a chain of convenience stores in the United States. The private company's headquarters are located in Mentor, Ohio, and currently, approximately 325 stores are located in the US. Convenient Food Mart operates on the franchise system.
 
-However, individual use of these factors for prediction could lead to conflicting results that were not straightforward enough for the physicians and patients to interpret and apply. Providing a prediction model might be a favorable way to understand the chance of quitting smoking for each individual smoker. Health outcome prediction models had been developed using methods of machine learning over recent years.
+Food Mart was the nation's third-largest chain of convenience stores as of 1988. The NASDAQ exchange dropped Convenient Food Mart the same year when the company failed to meet financial reporting requirements. Carden & Cherry advertised Convenient Food Mart with the Ernest character in the 1980s.
 
-A group of scientists is working on predictive models with smoking status as the prediction target. Your task is to help them create a machine learning model to identify the smoking status of an individual using bio-signals.
+Your task is to devise a Machine Learning Model that helps us predict the cost of media campaigns in the food marts on the basis of the features provided.
 
-## Dataset Description
-The dataset contains the following variables:
+## Dataset Description:
 
-- age: 5-year gap
-- height (cm)
-- weight (kg)
-- waist (cm): Waist circumference length
-- eyesight (left)
-- eyesight (right)
-- hearing (left)
-- hearing (right)
-- systolic: Blood pressure
-- relaxation: Blood pressure
-- fasting blood sugar
-- Cholesterol: total
-- triglyceride
-- HDL: cholesterol type
-- LDL: cholesterol type
-- hemoglobin
-- Urine protein
-- serum creatinine
-- AST: glutamic oxaloacetic transaminase type
-- ALT: glutamic oxaloacetic transaminase type
-- Gtp: γ-GTP
-- dental caries
-- smoking
+The dataset consists of the following features:
 
-The objective is to predict the smoking status of an individual using bio-signals.
+- store_sales (in millions): Store sales in million dollars.
+- unit_sales (in millions): Unit sales in millions in stores Quantity.
+- Total_children: Total children in home.
+- avg_cars_at_home(approx): Average number of cars at home.
+- Num_children_at_home: Number of children at home as per customer-filled details.
+- Gross_weight: Gross weight of the item.
+- Recyclable_package: Whether the food item is in a recyclable package or not.
+- Low_fat: Whether the food item is low-fat or not.
+- Units_per_case: Units per case, i.e., the units available in each store shelf.
+- Store_sqft: Store area available in square feet.
+- Coffee_bar: Whether a coffee bar is available in the store or not.
+- Video_store: Whether a video store or gaming store is available in the store or not.
+- Salad_bar: Whether a salad bar is available in the store or not.
+- Prepared_food: Whether food prepared is available in the store or not.
+- Florist: Whether flower shelves are available in the store or not.
+- Cost: Cost of acquiring a customer in dollars.
