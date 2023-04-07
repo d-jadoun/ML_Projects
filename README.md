@@ -1,9 +1,12 @@
 # Machine Learning Projects
-## TFX for Machine Learning Pipelines
-In my projects, I used TFX (TensorFlow Extended) to create machine learning pipelines. TFX is a powerful open-source platform for building scalable and production-ready machine learning pipelines. It includes components for data ingestion, data validation, transformation, training, evaluation, and serving.
+## TTFX for Machine Learning Pipelines
+In both of my projects, I used TFX (TensorFlow Extended) to create machine learning pipelines. TFX is a powerful open-source platform for building scalable and production-ready machine learning pipelines. It includes components for data ingestion, data validation, transformation, training, evaluation, and serving.
 
 ### ExampleGen for Data Ingestion
 The first step in the pipeline is to ingest data from the source. I used the ExampleGen component of TFX to read data from my input CSV files and convert it into a standard TensorFlow format called TFRecord. ExampleGen also performed data validation and split the data into training and evaluation sets.
+
+### StatisticsGen and SchemaGen for Data Analysis
+The StatisticsGen component of TFX was used to generate descriptive statistics of the input data, such as mean, variance, and feature distributions. These statistics were used for data analysis and visualization in TensorBoard. The SchemaGen component of TFX was used to generate a schema for the input data, which describes the expected shape and type of each feature. The schema was used to validate the data and ensure consistency across the pipeline.
 
 ### Transform for Data Preprocessing
 After ingesting data, the next step is to preprocess it to convert it into a format suitable for training. I used the Transform component of TFX to apply various transformations to my data, including normalization, feature engineering, and feature scaling. The transformed data was stored in another set of TFRecord files.
