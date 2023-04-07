@@ -26,12 +26,24 @@ def model_fn():
     # inputs['dental caries_xf'] = tf.keras.Input(shape=(1,),name=transformed_name('dental caries'))
     output = tf.keras.layers.Concatenate()(tf.nest.flatten(inputs))
     # output = tf.keras.layers.BatchNormalization()(output)
-    output = tf.keras.layers.Dense(128, activation='relu')(output)
+    output = tf.keras.layers.Dense(8192, activation='relu')(output)
     # output = tf.keras.layers.Dropout(0.05)(output)
     # output = tf.keras.layers.BatchNormalization()(output)
     # output = tf.keras.layers.Dense(32, activation='relu')(output)
-    output = tf.keras.layers.Dense(16, activation='relu')(output)
-    output = tf.keras.layers.Dense(16, activation='relu')(output)
+    output = tf.keras.layers.Dense(2048, activation='relu')(output)
+    output = tf.keras.layers.Dense(1024, activation='relu')(output)
+    # output = tf.keras.layers.Dense(1024, activation='relu')(output)
+    output = tf.keras.layers.Dense(512, activation='relu')(output)
+    output = tf.keras.layers.Dense(512, activation='relu')(output)
+    # output = tf.keras.layers.Dense(512, activation='relu')(output)
+    # output = tf.keras.layers.Dense(512, activation='relu')(output)
+    # output = tf.keras.layers.Dense(512, activation='relu')(output)
+    output = tf.keras.layers.Dense(256, activation='relu')(output)
+    output = tf.keras.layers.Dense(256, activation='relu')(output)
+    # output = tf.keras.layers.Dense(256, activation='relu')(output)
+    # output = tf.keras.layers.Dense(256, activation='relu')(output)
+    # output = tf.keras.layers.Dense(256, activation='relu')(output)
+    output = tf.keras.layers.Dense(128, activation='relu')(output)
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
@@ -42,15 +54,13 @@ def model_fn():
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
 #     output = tf.keras.layers.Dense(16, activation='relu')(output)
-#     output = tf.keras.layers.Dense(16, activation='relu')(output)
-#     output = tf.keras.layers.Dense(16, activation='relu')(output)
-    output = tf.keras.layers.Dense(1)(output)
+    output = tf.keras.layers.Dense(21,activation='softmax')(output)
     model = tf.keras.models.Model(inputs,output)
 
     # Compile model
     model.compile(optimizer='adam',#tf.keras.optimizers.Adam(learning_rate=0.1),
-                loss='mse',#mae
-                metrics=['mean_squared_logarithmic_error'])
+                loss='sparse_categorical_crossentropy',#mae
+                metrics=['accuracy'])
 
     return model
 
@@ -58,7 +68,7 @@ def model_fn():
 
 
 
-LABEL_KEY = 'cost_xf'
+LABEL_KEY = 'cost_bin_xf'
 
 def _gzip_reader_fn(filenames):
     return tf.data.TFRecordDataset(filenames,compression_type='GZIP')
@@ -91,7 +101,7 @@ def _get_serve_tf_examples_fn(model, tf_transform_output):
         feature_spec = tf_transform_output.raw_feature_spec()
         
         required_feature_spec = {
-            k: v for k, v in feature_spec.items() if k != 'cost'
+            k: v for k, v in feature_spec.items() if k != 'cost_bin'
         }
 
         parsed_features = tf.io.parse_example(
@@ -121,7 +131,7 @@ def run_fn(fn_args):
         steps_per_epoch = fn_args.train_steps,
         validation_data = eval_dataset,
         validation_steps = fn_args.eval_steps,
-        epochs=200,
+        epochs=20,
         callbacks=[tensorboard_callback]
     )
     
