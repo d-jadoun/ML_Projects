@@ -1,5 +1,5 @@
 # Machine Learning Projects
-## TTFX for Machine Learning Pipelines
+## TFX for Machine Learning Pipelines
 In both of my projects, I used TFX (TensorFlow Extended) to create machine learning pipelines. TFX is a powerful open-source platform for building scalable and production-ready machine learning pipelines. It includes components for data ingestion, data validation, transformation, training, evaluation, and serving.
 
 ### ExampleGen for Data Ingestion
