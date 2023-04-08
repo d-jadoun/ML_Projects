@@ -43,4 +43,4 @@ response = requests.post(url, json=payload)
 # Get the prediction results
 prediction_results = json.loads(response.text)
 print("Cost:", prediction_results["predictions"])
-print("Cost:", np.argmax(prediction_results["predictions"]) + 1)
+print("Cost:", np.argmax(prediction_results["predictions"]))
