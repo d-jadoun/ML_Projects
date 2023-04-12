@@ -31,10 +31,10 @@ def model_fn():
     inputs['dental caries_xf'] = tf.keras.Input(shape=(1,),name=transformed_name('dental caries'))
     output = tf.keras.layers.Concatenate()(tf.nest.flatten(inputs))
     output = tf.keras.layers.BatchNormalization()(output)
-    output = tf.keras.layers.Dense(32, activation='relu')(output)
+    output = tf.keras.layers.Dense(256, activation='relu')(output)
     output = tf.keras.layers.Dropout(0.3)(output)
     output = tf.keras.layers.BatchNormalization()(output)
-    output = tf.keras.layers.Dense(32, activation='relu')(output)
+    output = tf.keras.layers.Dense(128, activation='relu')(output)
     output = tf.keras.layers.Dropout(0.3)(output)
     output = tf.keras.layers.BatchNormalization()(output)
     output = tf.keras.layers.Dense(32, activation='relu')(output)
@@ -54,7 +54,7 @@ def model_fn():
     model = tf.keras.models.Model(inputs,output)
 
     # Compile model
-    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+    model.compile(optimizer='adam',#tf.keras.optimizers.Adam(learning_rate=0.01),
                 loss='binary_crossentropy',#mae
                 metrics=['binary_accuracy'])
 
