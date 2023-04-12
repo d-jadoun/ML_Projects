@@ -35,3 +35,6 @@ The dataset contains the following variables:
 - smoking
 
 The objective is to predict the smoking status of an individual using bio-signals.
+
+Here is the output of TensorBoard, which shows the model performance as the epochs increase:
+![alt-text](Smoking/tensorboard.gif)
