@@ -45,7 +45,7 @@ TFX was used for the construction of the ML pipeline, and the following steps we
 - After that, SchemaGen is used to create the schema for the data, which is used when predictions are made.
 - The ExampleValidator component is used to check for anomalies.
 - Later, Transform component is used to transform the features such that the model learning is improved. The feature transformations
-can be found in "smoking_transform.py" file.
+can be found in ```smoking_transform.py``` file.
 - Finally, the Trainer component is used to train and evaluate the neural netowrk. The Keras model used of training can be found in
 the ```smoking_trainer.py``` file.
 There were 50 epochs in the model training and here is how the model performed,:
