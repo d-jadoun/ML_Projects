@@ -46,7 +46,7 @@ TFX was used for the construction of the ML pipeline, and the following steps we
 - The ExampleValidator component is used to check for anomalies.
 - Later, Transform component is used to transform the features such that the model learning is improved.
 - Finally, the Trainer component is used to train and evaluate the neural netowrk. There were 50 epochs in the model training and here
-is how the model performed:
+is how the model performed,:
 
 ![alt-text](tensorboard.gif)
 - After the model is trained, it is pushed to "Serve/model" directory using the Pusher component.
