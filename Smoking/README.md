@@ -51,4 +51,10 @@ is how the model performed,:
 ![alt-text](tensorboard.gif)
 - After the model is trained, it is pushed to "Serve/model" directory using the Pusher component.
 
-
+### Making Predictions
+The served model can be deployed using Docker. Use the following commands to deploy the model using docker:
+```
+docker pull tensorflow/serving
+docker run -p 8501:8501 --mount type=bind,source=/run/media/thakur/SecDisk   master /CampaignCost/Serve/model/1681308668,target=/models/1 -e MODEL_NAME=1 -t tensorflow/serving
+```
+Once the model is deployed, you can run the "inference.py" file to make predictions.
