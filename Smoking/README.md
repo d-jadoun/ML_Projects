@@ -47,7 +47,7 @@ TFX was used for the construction of the ML pipeline, and the following steps we
 - Later, Transform component is used to transform the features such that the model learning is improved. The feature transformations
 can be found in "smoking_transform.py" file.
 - Finally, the Trainer component is used to train and evaluate the neural netowrk. The Keras model used of training can be found in
-the "smoking_trainer.py" file.
+the ```smoking_trainer.py``` file.
 There were 50 epochs in the model training and here is how the model performed,:
 
 ![alt-text](tensorboard.gif)
