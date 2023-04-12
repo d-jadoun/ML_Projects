@@ -1,4 +1,5 @@
-# Smoking Cessation Prediction Model
+# Smoking Prediction Model
+## Dataset Details
 Smoking has been proven to negatively affect health in a multitude of ways, and it has been found to harm nearly every organ of the body, causing many diseases and reducing the life expectancy of smokers. As of 2018, smoking has been considered the leading cause of preventable morbidity and mortality in the world, continuing to plague the world’s overall health. According to a World Health Organization report, the number of deaths caused by smoking will reach 10 million by 2030.
 
 Despite the availability of evidence-based treatment for smoking cessation, only less than one third of the participants could achieve the goal of abstinence. Many physicians found counseling for smoking cessation ineffective and time-consuming and did not routinely do so in daily practice. To overcome this problem, several factors had been proposed to identify smokers who had a better chance of quitting. These factors include the level of nicotine dependence, exhaled carbon monoxide (CO) concentration, cigarette amount per day, the age at smoking initiation, previous quit attempts, marital status, emotional distress, temperament and impulsivity scores, and the motivation to stop smoking.
@@ -36,5 +37,17 @@ The dataset contains the following variables:
 
 The objective is to predict the smoking status of an individual using bio-signals.
 
-Here is the output of TensorBoard, which shows the model performance as the epochs increase:
+## Keras Neural Networks for Predictions
+TFX was used for the construction of the ML pipeline, and the following steps were taken:
+- I start with ingesting the data using ExampleGen, which allows creating training and evaluation splits.
+- Then, StatisticsGen is used to create statistics of the features available in the dateset:
+![alt-text](statistics_gen.gif)
+- After that, SchemaGen is used to create the schema for the data, which is used when predictions are made.
+- The ExampleValidator component is used to check for anomalies.
+- Later, Transform component is used to transform the features such that the model learning is improved.
+- Finally, the Trainer component is used to train and evaluate the neural netowrk. There were 50 epochs in the model training and here
+is how the model performed:
 ![alt-text](tensorboard.gif)
+- After the model is trained, it is pushed to "Serve/model" directory using the Pusher component.
+
+
