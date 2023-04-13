@@ -28,7 +28,7 @@ def model_fn():
     # output = tf.keras.layers.BatchNormalization()(output)
     # output = tf.keras.layers.Dense(4096, activation='relu')(output)
     # for i in range(2):
-    output = tf.keras.layers.Dense(30000,activation='relu')(output)
+    output = tf.keras.layers.Dense(10000,activation='relu')(output)
     # output = tf.keras.layers.Dropout(0.05)(output)
     output = tf.keras.layers.BatchNormalization()(output)
     # output = tf.keras.layers.Dense(32, activation='relu')(output)

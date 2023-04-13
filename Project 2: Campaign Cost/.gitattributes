@@ -1,0 +1,4 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+Serve/model/1681369043/1/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+pipeline/Pusher/pushed_model/112/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
+pipeline/Trainer/model/111/Format-Serving/variables/variables.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
