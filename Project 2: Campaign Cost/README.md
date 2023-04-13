@@ -28,7 +28,7 @@ The dataset consists of the following features:
 - Cost: Cost of acquiring a customer in dollars.
 
 ## Keras Neural Networks for Predictions
-Before using TFX and relevant components, the feature selection was performed. Three least correlated features from the
+Before using TFX and relevant components, the feature selection was performed. Three least correlated features to the label "cost" from the
 following figure were discarded:
 ![alt-text](CorrFun.png)
 TFX was used for the construction of the ML pipeline, and the following steps were taken:
