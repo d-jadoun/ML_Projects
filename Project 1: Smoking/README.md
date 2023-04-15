@@ -37,6 +37,35 @@ The dataset contains the following variables:
 
 The objective is to predict the smoking status of an individual using bio-signals.
 
+## Data Analysis with Tableau
+![alt-text](Dashboard_Smoking.png)
+The smoking dataset was analyzed using Tableau and the dashboard can be found in ```Smoking_Analysis.twb``` file.
+
+Four of the key factors that the smoking seems to affect are shown here. The first factor is weight, which seems to increase when someone smokes, as
+shown below,
+
+| Weight Distribution for Smokers | Weight Distribution for Non-smoker |
+| ----- | ----- |
+|![alt-text](Weight_Smoking.png)|![alt-text](Weight_NoSmoking.png)|
+
+As can be seen by comparing the weight distributions shown above, non-smokers seem to weigh less in general compared to smokers. The similar behavior is
+observed in the waist size, as shown below,
+| Waist Size Distribution for Smokers | Waist Size Distribution for Non-smoker |
+| ----- | ----- |
+|![alt-text](Waist_Smoking.png)|![alt-text](Waist_NoSmoking.png)|
+
+The distribution takes a guassian form for the both the cases, but the non-smokers seem to have smaller waist size in general compared to smoker.
+Since physical appearance can be influenced by more than one facto, it is not conclusive enough to decide if someone smokes or not. There are multiple
+factors in the dataset that affect the human body, but we show two more such factors before moving to build a Neural Network for predictions,
+
+| Hemoglobin Distribution for Smokers | Hemoglobin Distribution for Non-smoker |
+| ----- | ----- |
+|![alt-text](Hemoglobin_Smoking.png)|![alt-text](Hemoglobin_NoSmoking.png)|
+
+| Triglyceride Distribution for Smokers | Triglycerid Distribution for Non-smoker |
+| ----- | ----- |
+|![alt-text](Triglyceride_Smoking.png)|![alt-text](Triglyceride_NoSmoking.png)|
+
 ## Keras Neural Networks for Predictions
 TFX was used for the construction of the ML pipeline, and the following steps were taken:
 - I start with ingesting the data using ExampleGen, which allows creating training and evaluation splits.
